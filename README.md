@@ -1,13 +1,13 @@
 # Description
 
-Add this entry to:
+Add these entries to /etc/hosts :
 
-127.0.0.1 server1 server2
+127.0.0.1 server1 server2 ...
 
-Run with two instances with Spring profiles:
+Run app twice, once with each of the following Spring profiles:
 
-- server1 to access at https://server1:8081 - which uses keystore server1.jks
-- server2 to access at https://server2:8082 - which uses keystore server1.jks
+- `server1` to access at https://server1:8081 - which uses keystore `server1.jks`
+- `server2` to access at https://server2:8082 - which uses keystore `server1.jks`
 
 Used by [multitrustsslbundle](https://github.com/sandipchitale/multitrustsslbundle) app.
 
