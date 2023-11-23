@@ -1,0 +1,41 @@
+spring:
+  main:
+    banner-mode: off
+  profiles:
+    active: server1
+server:
+  ssl:
+    bundle: server
+logging:
+  level:
+    root: off
+---
+spring:
+  config:
+    activate:
+      on-profile: server1
+  ssl:
+    bundle:
+      jks:
+        server:
+          keystore:
+            type: JKS
+            location: classpath:server1.jks
+            password: abcdefg
+server:
+  port: 8081
+---
+spring:
+  config:
+    activate:
+      on-profile: server2
+  ssl:
+    bundle:
+      jks:
+        server:
+          keystore:
+            type: JKS
+            location: classpath:server2.jks
+            password: abcdefg
+server:
+  port: 8082
